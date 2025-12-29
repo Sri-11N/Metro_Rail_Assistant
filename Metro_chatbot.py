@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-# Install dependencies
-# pip install streamlit google-genai
 
 import os
 import streamlit as st
