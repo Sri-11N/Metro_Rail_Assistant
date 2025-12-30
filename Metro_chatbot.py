@@ -15,18 +15,15 @@ Use a friendly, calm, and public-service tone. Keep responses short and easy to 
 you should answer only  only queries related to Metro Rail Passenger Guidance. you should not answer any other questions unrelated to Metro Rail Passenger Guidance.
 """
 
-# User input
 user_prompt = st.text_area("Enter your question:")
 
-# Button
 if st.button("Get Answer") and user_prompt.strip():
     try:
         # Create Gemini client
         client = genai.Client(
-            api_key=("AIzaSyCGgKeUnYtwnPptA_ZwtBJhRGKC0hJM9QY")
+            api_key=("AIzaSyAWL0LeSMeDKgE7BVXmDn5yukEbA7Ulkr4")
         )
 
-        # Combine system + user prompt
         contents = [
             types.Content(
                 role="user",
@@ -44,14 +41,11 @@ if st.button("Get Answer") and user_prompt.strip():
                 contents=contents,
             )
 
-        # Display response
         st.subheader("Response")
         st.write(response.text)
 
     except Exception as e:
         st.error(f"Error: {e}")
-
-# Footer disclaimer
 st.caption(
     "ℹ️ This assistant provides general metro passenger guidance only. "
     "No ticketing or real-time metro operations."
